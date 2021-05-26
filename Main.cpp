@@ -214,7 +214,8 @@ int main(void){
 
 									do {
 										printf( "\n\n" );
-										printf( "Introduzca su usuario: " );
+										printf( "Introduzca su usuario " );
+										printf( " O escriba fin para salir del registro: ");
 										fflush(stdin);
 								 		fgets(cadena, 20, stdin);
 										sscanf(cadena, "%s", nombre);
@@ -225,6 +226,7 @@ int main(void){
 											fgets(cadena, 20, stdin);
 											sscanf(cadena, "%s", clave);
 											printf( "\n   Registro con exito! ");
+
 
 											/* Guarda el registro en el fichero */
 											fprintf(fichero, "%s %s\n", nombre, clave);
