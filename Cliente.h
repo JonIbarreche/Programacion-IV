@@ -18,7 +18,11 @@ private:
 	int puntos;
 	Libro libros[];
 
-
+public:
+	Cliente(const char nombre, const int contrasenya, const int edad, const char email, const int puntos,const Libro libros[]);
+	Cliente();
+	Cliente(Cliente &c);
+	virtual ~Cliente();
 };
 
 

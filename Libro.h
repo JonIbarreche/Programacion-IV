@@ -17,6 +17,11 @@ private:
 	char autor;
 	int fechaLanzamiento;
 
+public:
+	Libro(const int nSerie, const char autor, const int fechaLanzamiento);
+	Libro();
+	Libro(Libro &l);
+	virtual ~Libro();
 
 };
 
