@@ -8,7 +8,7 @@
 #ifndef CLIENTE_H_
 #define CLIENTE_H_
 #include "Libro.h"
-class Libro
+class Cliente
 {
 private:
 	char nombre;
