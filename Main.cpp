@@ -8,6 +8,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include "Biblioteca.h"
+#include "Cliente.h"
+#include "Libro.h"
+
 
 int main(void){
 	setbuf(stdout, NULL);
