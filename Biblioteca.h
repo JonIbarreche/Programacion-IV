@@ -18,7 +18,7 @@ class Biblioteca
 private:
 	int Usuario;
 	int contrasena;
-	Libro libros [];
+	Libro *libros;
 
 public:
 	Biblioteca(const int Usuario, const int contrasena, const Libro libros[]);
