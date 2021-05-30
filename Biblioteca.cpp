@@ -12,13 +12,11 @@
 
 using namespace std;
 
-Biblioteca::Biblioteca(const int Usuario, const int contrasena, const Libro *libros){
+Biblioteca::Biblioteca(const int Usuario, const int contrasena, Libro* libros){
 
 	this->Usuario=Usuario;
 	this->contrasena= contrasena;
-	this->libros = new Libro[strlen(libros) + 1];
-		strcpy(this->libros, libros);
-
+	this->libros = libros;
 
 
 }
@@ -35,7 +33,7 @@ Biblioteca::Biblioteca(Biblioteca &b){
 	this->libros= b.libros;
 
 }
-virtual Biblioteca::~Biblioteca(){
+Biblioteca::~Biblioteca(){
 
 
 }

@@ -21,7 +21,7 @@ private:
 	Libro *libros;
 
 public:
-	Biblioteca(const int Usuario, const int contrasena, const Libro libros[]);
+	Biblioteca(const int Usuario, const int contrasena,  Libro *libros);
 	Biblioteca();
 	Biblioteca(Biblioteca &b);
 	virtual ~Biblioteca();
