@@ -20,8 +20,7 @@ Cliente::Cliente(const char *nombre,int contrasenya,int edad, const char *email,
 	this->email = new char[strlen(email) + 1];
 			strcpy(this->email, email);
 	this->puntos=puntos;
-	this->libros=new Libro [strlen(libros->titulo)+1];
-		strcpy(this->libros->titulo,libros->titulo);
+	this->libros=libros;
 }
 Cliente::Cliente(){
 	this->nombre = new char[1];
@@ -32,5 +31,18 @@ Cliente::Cliente(){
 	this->email[0] = '\0';
 	this->puntos=0;
 	this->libros=NULL;
+
+}
+Cliente::Cliente(Cliente &c){
+	this->nombre = new char[strlen(c.nombre) + 1];
+		strcpy(this->nombre, c.nombre);
+	this->contrasenya=c.contrasenya;
+	this->edad = c.edad;
+	this->email=new char [strlen(c.email)+1];
+		this->email=c.email;
+	this->puntos=c.puntos;
+	this->libros=libros;
+
+
 
 }
