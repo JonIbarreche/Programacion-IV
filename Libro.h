@@ -24,6 +24,8 @@ public:
 	Libro(Libro &l);
 	virtual ~Libro();
 
+
+
 };
 
 

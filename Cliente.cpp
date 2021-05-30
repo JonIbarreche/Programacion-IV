@@ -9,10 +9,10 @@
 #include "Cliente.h"
 #include <stdio.h>
 #include <iostream>
-#include "Cliente.h"
 
 using namespace std;
-Cliente::Cliente(const char *nombre,int contrasenya,int edad, const char *email, int puntos, const Libro *libros){
+
+Cliente::Cliente(const char *nombre, const int contrasenya, const int edad, const char *email, const int puntos, Libro *libros){
 	this->nombre = new char[strlen(nombre) + 1];
 		strcpy(this->nombre, nombre);
 	this->contrasenya=contrasenya;
@@ -20,8 +20,7 @@ Cliente::Cliente(const char *nombre,int contrasenya,int edad, const char *email,
 	this->email = new char[strlen(email) + 1];
 			strcpy(this->email, email);
 	this->puntos=puntos;
-	this->libros=new Libro [strlen(libros->titulo)+1];
-		strcpy(this->libros->titulo,libros->titulo);
+	this->libros=libros;
 }
 Cliente::Cliente(){
 	this->nombre = new char[1];

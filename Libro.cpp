@@ -36,7 +36,9 @@ Libro::Libro(Libro &l){
 	this->autor = new char[strlen(l.autor) + 1];
 		strcpy(this->autor, l.autor);
 }
-virtual Libro::~Libro(){
+Libro::~Libro(){
 
+	delete []titulo;
+	delete[] autor;
 
 }

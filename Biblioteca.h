@@ -18,10 +18,12 @@ class Biblioteca
 private:
 	int Usuario;
 	int contrasena;
+	char *nombre;
+	char *ubicacion;
 	Libro *libros;
 
 public:
-	Biblioteca(const int Usuario, const int contrasena,  Libro *libros);
+	Biblioteca(const int Usuario, const int contrasena, char* nombre, char* ubicacion, Libro *libros);
 	Biblioteca();
 	Biblioteca(Biblioteca &b);
 	virtual ~Biblioteca();
