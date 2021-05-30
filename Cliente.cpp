@@ -33,3 +33,16 @@ Cliente::Cliente(){
 	this->libros=NULL;
 
 }
+Cliente::Cliente(Cliente &c){
+	this->nombre = new char[strlen(c.nombre) + 1];
+		strcpy(this->nombre, c.nombre);
+	this->contrasenya=c.contrasenya;
+	this->edad = c.edad;
+	this->email=new char [strlen(c.email)+1];
+		this->email=c.email;
+	this->puntos=c.puntos;
+	this->libros=libros;
+
+
+
+}
