@@ -11,15 +11,15 @@
 class Cliente
 {
 private:
-	char nombre;
+	char* nombre;
 	int contrasenya;
 	int edad;
-	char email;
+	char *email;
 	int puntos;
-	Libro libros[];
+	Libro *libros;
 
 public:
-	Cliente(const char nombre, const int contrasenya, const int edad, const char email, const int puntos,const Libro libros[]);
+	Cliente(const char *nombre, const int contrasenya, const int edad, const char *email, const int puntos,const Libro *libros);
 	Cliente();
 	Cliente(Cliente &c);
 	virtual ~Cliente();

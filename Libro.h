@@ -14,11 +14,12 @@ class Libro
 {
 private:
 	int nSerie;
-	char autor;
+	char *titulo;
+	char *autor;
 	int fechaLanzamiento;
 
 public:
-	Libro(const int nSerie, const char autor, const int fechaLanzamiento);
+	Libro(const int nSerie, const char *titulo,const char *autor, const int fechaLanzamiento);
 	Libro();
 	Libro(Libro &l);
 	virtual ~Libro();
