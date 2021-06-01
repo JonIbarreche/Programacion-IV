@@ -6,6 +6,7 @@
  */
 
 
+/*
 #include "Cliente.h"
 #include <stdio.h>
 #include <iostream>
@@ -46,3 +47,4 @@ Cliente::Cliente(Cliente &c){
 
 
 }
+*/
