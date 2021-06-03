@@ -35,7 +35,7 @@ static int callback(void *data, int argc, char **argv, char **azColName) {
 }
 void Base1::creartablas() {
 	char *error = 0;
-	int res, res1, res2, res3, res4;
+	int res, res1;
 	const char *sql;
 	const char *sql1;
 
@@ -74,10 +74,9 @@ void Base1::baseiniciar() {
 
 	int res;
 	/* Open database */
-	res = sqlite3_open("db.s3db", &db);
+	res = sqlite3_open("data.db", &db);
 	if (res) {
-		fprintf(stderr, "No puedo abrir la base de datos: %s\n",
-				sqlite3_errmsg(db));
+		fprintf(stderr, "No puedo abrir la base de datos: %s\n", sqlite3_errmsg(db));
 		exit(0);
 	} else {
 		fprintf(stderr, "Base de datos OK\n");

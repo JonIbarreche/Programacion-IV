@@ -6,7 +6,7 @@
  */
 
 
-/*
+
 #include "Cliente.h"
 #include <stdio.h>
 #include <iostream>
@@ -44,7 +44,9 @@ Cliente::Cliente(Cliente &c){
 	this->puntos=c.puntos;
 	this->libros=libros;
 
-
-
 }
-*/
+
+Cliente::~Cliente() {
+	// TODO Auto-generated destructor stub
+}
+
