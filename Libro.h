@@ -10,6 +10,8 @@
 #include <iostream>
 #include <string.h>
 
+#include "sqlite3.h"
+
 class Libro
 {
 private:

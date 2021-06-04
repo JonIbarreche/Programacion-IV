@@ -92,11 +92,11 @@ void Base1::registrarLibro() {
 	char *error1 = 0;
 	char *error2 = 0;
 	char const *sql =
-			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas) VALUES(11, 'Profundis', 'OscarWilde', '300');";
+			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas, precio) VALUES(11, 'Profundis', 'OscarWilde', '300',20);";
 	char const *sql1 =
-			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas) VALUES(12, 'LaIsla', 'JulioVerne', '262');";
+			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas, precio) VALUES(12, 'LaIsla', 'JulioVerne', '262',35);";
 	char const *sql2 =
-			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas) VALUES(13, 'Profundis', 'OscarWilde', '300');";
+			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas, precio) VALUES(13, 'Profundis', 'OscarWilde', '300',19);";
 	res = sqlite3_exec(db, sql, NULL, 0, &error);
 	if (res != SQLITE_OK) {
 		fprintf(stderr, "Error: %s\n", error);

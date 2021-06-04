@@ -9,6 +9,9 @@
 #include "Libro.h"
 #include <stdio.h>
 
+#include "sqlite3.h"
+
+
 Libro::Libro(const int nSerie,const char *titulo, const char *autor, const int fechaLanzamiento, const int precio){
 
 	this->nSerie= nSerie;
