@@ -21,7 +21,7 @@ private:
 	int contrasena;
 	char *nombre;
 	char *ubicacion;
-	Libro *libros;
+	Libro **libros;
 	int num_libro;
 
 public:
