@@ -79,7 +79,7 @@ int main(void) {
 					printf("\n Biblioteca escogida");
 					break;
 				case 2:
-					printf("\n Informacion del libro");
+					printf("\n Informacion de las bibliotecas.");
 					break;
 				}
 				printf("\n\n\n");
