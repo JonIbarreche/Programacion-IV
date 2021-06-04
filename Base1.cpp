@@ -35,17 +35,22 @@ static int callback(void *data, int argc, char **argv, char **azColName) {
 }
 void Base1::creartablas() {
 	char *error = 0;
-	int res, res1;
+	int res, res1, res2;
 	const char *sql;
 	const char *sql1;
+	const char *sql2;
 
+	sql = "CREATE TABLE Libros ("
+			"nSerie NUMBER PRIMARY KEY, "
+			"titulo TEXT, "
+			"autor TEXT, "
+			"precio NUMBER ,";
 
-	sql = "CREATE TABLE Libro ("
-			"CodLib NUMBER PRIMARY KEY, "
-			"Nombre TEXT, "
-			"Autor TEXT, "
-			"NumHojas NUMBER ,";
-
+	sql2 = "CREATE TABLE Libros ("
+				"id NUMBER PRIMARY KEY, "
+				"nombre TEXT, "
+				"ubicacion TEXT, "
+				"Libros TEXT ,";
 
 	sql1 = "CREATE TABLE Reserva ("
 			"CodReserva NUMBER PRIMARY KEY, "
@@ -69,6 +74,13 @@ void Base1::creartablas() {
 	} else {
 
 	}
+	res2 = sqlite3_exec(db, sql2, NULL, 0, &error);
+		if (res1 != SQLITE_OK) {
+			fprintf(stderr, "Error: %s\n", error);
+			sqlite3_free(error);
+		} else {
+
+		}
 }
 void Base1::baseiniciar() {
 
@@ -92,11 +104,11 @@ void Base1::registrarLibro() {
 	char *error1 = 0;
 	char *error2 = 0;
 	char const *sql =
-			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas, precio) VALUES(11, 'Profundis', 'OscarWilde', '300',20);";
+			"INSERT INTO Libros(nSerie, titulo, autor, precio) VALUES(11, 'Profundis', 'OscarWilde', 20);";
 	char const *sql1 =
-			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas, precio) VALUES(12, 'LaIsla', 'JulioVerne', '262',35);";
+			"INSERT INTO Libros(nSerie, titulo, autor, precio) VALUES(12, 'LaIsla', 'JulioVerne', ,35);";
 	char const *sql2 =
-			"INSERT INTO Libro(CodLib, Nombre, Autor, NumHojas, precio) VALUES(13, 'Profundis', 'OscarWilde', '300',19);";
+			"INSERT INTO Libros(CodLib, Nombre, Autor, NumHojas, precio) VALUES(13, 'Profundis', 'OscarWilde',19);";
 	res = sqlite3_exec(db, sql, NULL, 0, &error);
 	if (res != SQLITE_OK) {
 		fprintf(stderr, "Error: %s\n", error);
@@ -125,8 +137,8 @@ void Base1::leerLibro() {
 	char *t;
 	char *ec;
 
-	sqlite3_prepare_v2(db, "select * from Libro", -1, &stmt, NULL);
-	sqlite3_exec(db, "SELECT * FROM Libro", callback, 0, NULL);
+	sqlite3_prepare_v2(db, "select * from Libros", -1, &stmt, NULL);
+	sqlite3_exec(db, "SELECT * FROM Libros", callback, 0, NULL);
 
 }
 
@@ -166,7 +178,32 @@ void Base1::registrarReserva() {
 		fprintf(stdout, "Reserva añadida!\n");
 	}
 }
+void Base1::registrarBiblioteca() {
+	baseiniciar();
+	int bib, bib1;
+	char *error = 0;
+	char *error1 = 0;
+	char const *sql =
+			"INSERT INTO Biblioteca(id, nombre, ubicacion, libros) VALUES(1, 'Biblio1','Gazteiz', 4);";
+	char const *sql1 =
+			"INSERT INTO Biblioteca(id, nombre, ubicacion, libros) VALUES(2, 'Biblio2', 'Bilbao', 4);";
 
+	bib = sqlite3_exec(db, sql, NULL, 0, &error);
+	if (error != SQLITE_OK) {
+		fprintf(stderr, "Error: %s\n", error);
+		sqlite3_free(error);
+	} else {
+		fprintf(stdout, "Biblioteca añadida!\n");
+	}
+	bib1 = sqlite3_exec(db, sql1, NULL, 0, &error1);
+	if (error1 != SQLITE_OK) {
+		fprintf(stderr, "Error: %s\n", error1);
+		sqlite3_free(error);
+	} else {
+		fprintf(stdout, "Biblioteca añadida!\n");
+	}
+
+}
 void Base1::leerReserva() {
 	baseiniciar();
 	sqlite3_stmt *stmt;

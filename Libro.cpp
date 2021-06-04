@@ -125,7 +125,7 @@ int showAllLibros(sqlite3 *db) {
 int insertNewLibro(sqlite3 *db, char titulo[],char autor[], int precio) {
 	sqlite3_stmt *stmt;
 
-	char sql[] = "insert into Libros (nSerie, name) values (NULL, ?,?,?)";
+	char sql[] = "insert into Libros (nSerie, titulo, autor, precio) values (NULL, ?,?,?)";
 	int result = sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, NULL) ;
 	if (result != SQLITE_OK) {
 		printf("Error preparing statement (INSERT)\n");

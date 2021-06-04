@@ -23,7 +23,7 @@ public:
 
 	void registrarLibro();
 	void registrarReserva();
-
+	void registrarBiblioteca();
 
 	void leerReserva();
 	void leerLibro();
