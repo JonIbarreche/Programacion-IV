@@ -67,5 +67,5 @@ void Biblioteca::aniadirLibros(Libro * libro){
 void Biblioteca::imprimirLibros(){
 
 	for (int i = 0;i < this->num_libro;i++)  {
-			cout << "Libro " << i+1 << ": " << this->libros[i]->getnSerie() << ",s " << this->libros[i]->getTitulo() << ", " <<" " << this->libros[i]->getAutor() <<", " << this->libros[i]->getFechaLanzamiento() <<", " << this->libros[i]->getPrecio() << endl;
+			cout << "Libro " << i+1 << ": " << this->libros[i]->getNSerie() << ",s " << this->libros[i]->getTitulo() << ", " <<" " << this->libros[i]->getAutor() <<", " << this->libros[i]->getFechaLanzamiento() <<", " << this->libros[i]->getPrecio() << endl;
 }
