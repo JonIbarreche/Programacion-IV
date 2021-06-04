@@ -36,7 +36,7 @@ public:
 
 
 	int showAllLibros(sqlite3 *db);
-	int insertNewCountry(sqlite3 *db, char titulo[],char autor[], int precio);
+	int insertNewLibro(sqlite3 *db, char titulo[],char autor[], int precio);
 
 };
 
