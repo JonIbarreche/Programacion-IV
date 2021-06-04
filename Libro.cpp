@@ -49,17 +49,17 @@ Libro::~Libro(){
 }
 int Libro::getNSerie() const
 {
-	return nSerie;
+	return this->nSerie;
 }
 
 char* Libro::getTitulo() const{
-	return titulo;
+	return this->titulo;
 }
 char* Libro::getAutor() const{
-	return autor;
+	return this->autor;
 	}
 int Libro::getPrecio() const{
-	return precio;
+	return this->precio;
 }
 
 void Libro::setNSerie(int nSerie){
