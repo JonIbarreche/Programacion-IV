@@ -122,7 +122,7 @@ int showAllLibros(sqlite3 *db) {
 	return SQLITE_OK;
 }
 
-int insertNewCountry(sqlite3 *db, char titulo[],char autor[], int precio) {
+int insertNewLibro(sqlite3 *db, char titulo[],char autor[], int precio) {
 	sqlite3_stmt *stmt;
 
 	char sql[] = "insert into Libros (nSerie, name) values (NULL, ?,?,?)";
