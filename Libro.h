@@ -17,9 +17,9 @@ private:
 	char *titulo;
 	char *autor;
 	int fechaLanzamiento;
-
+	int precio;
 public:
-	Libro(const int nSerie, const char *titulo,const char *autor, const int fechaLanzamiento);
+	Libro(const int nSerie, const char *titulo,const char *autor, const int fechaLanzamiento, const int precio);
 	Libro();
 	Libro(Libro &l);
 	virtual ~Libro();

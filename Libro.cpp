@@ -9,7 +9,7 @@
 #include "Libro.h"
 #include <stdio.h>
 
-Libro::Libro(const int nSerie,const char *titulo, const char *autor, const int fechaLanzamiento){
+Libro::Libro(const int nSerie,const char *titulo, const char *autor, const int fechaLanzamiento, const int precio){
 
 	this->nSerie= nSerie;
 	this->titulo = new char[strlen(titulo) + 1];
@@ -17,6 +17,7 @@ Libro::Libro(const int nSerie,const char *titulo, const char *autor, const int f
 	this->fechaLanzamiento= fechaLanzamiento;
 	this->autor = new char[strlen(autor) + 1];
 			strcpy(this->autor, autor);
+	this->precio= precio;
 }
 Libro::Libro(){
 
@@ -26,6 +27,8 @@ Libro::Libro(){
 	this->fechaLanzamiento= 0;
 	this->titulo = new char[1];
 		this->titulo[0] = '\0';
+	this->precio= 0;
+
 }
 Libro::Libro(Libro &l){
 
@@ -35,6 +38,8 @@ Libro::Libro(Libro &l){
 	this->fechaLanzamiento= l.fechaLanzamiento;
 	this->autor = new char[strlen(l.autor) + 1];
 		strcpy(this->autor, l.autor);
+	this->precio= l.precio;
+
 }
 Libro::~Libro(){
 
