@@ -35,6 +35,9 @@ int main(void) {
 	a.registrarBiblioteca();
 	a.registrarLibro();
 	a.registrarReserva();
+	//a.leerLibro();
+	//a.leerBiblioteca();
+	//a.leerReserva();
 
 	while (bucle) {
 		printf("Menu Principal\n\n");

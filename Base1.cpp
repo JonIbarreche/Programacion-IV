@@ -65,7 +65,7 @@ void Base1::creartablas() {
 			"ID NUMBER PRIMARY KEY, "
 			"NOMBRE TEXT, "
 			"UBICACION TEXT, "
-			"CODLIB NUMBER references Libro(NSERIE);";
+			"NSERIE NUMBER references Libro(NSERIE);";
 
 	sql2 = "CREATE TABLE RESERVA ("
 			"CODRESERVA NUMBER PRIMARY KEY, "
@@ -190,9 +190,9 @@ void Base1::registrarBiblioteca() {
 	int res, res1;
 	char *error = 0;
 	char const *sql =
-			"INSERT INTO BIBLIOTECA(ID, NOMBRE, UBICACION, CODLIB) VALUES(1, 'Biblio1','Gazteiz', 11);";
+			"INSERT INTO BIBLIOTECA(ID, NOMBRE, UBICACION, NSERIE) VALUES(1, 'Biblio1','Gazteiz', 11);";
 	char const *sql1 =
-			"INSERT INTO BIBLIOTECA(ID, NOMBRE, UBICACION, CODLIB) VALUES(2, 'Biblio2', 'Bilbao', 12);";
+			"INSERT INTO BIBLIOTECA(ID, NOMBRE, UBICACION, NSERIE) VALUES(2, 'Biblio2', 'Bilbao', 12);";
 
 	res = sqlite3_exec(db, sql, NULL, 0, &error);
 	if (res != SQLITE_OK) {
