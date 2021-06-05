@@ -52,7 +52,7 @@ void Base1::creartablas() {
 	char *error = 0;
 	int res, res1, res2;
 	const char *sql;
-	const char *sql1;
+
 	const char *sql2;
 
 	sql = "CREATE TABLE LIBROS ("
@@ -61,12 +61,12 @@ void Base1::creartablas() {
 			"AUTOR TEXT, "
 			"PRECIO NUMBER );";
 
-	sql1 = "CREATE TABLE BIBLIOTECA ("
+	const char *sql1 = "CREATE TABLE BIBLIOTECA ("
 			"ID NUMBER PRIMARY KEY, "
 			"NOMBRE TEXT, "
 			"UBICACION TEXT, "
-			"NSERIE NUMBER references Libro(NSERIE);";
-
+			"NSERIE NUMBER, "
+			"FOREIGN KEY(NSERIE) REFERENCES LIBROS(NSERIE) );";
 	sql2 = "CREATE TABLE RESERVA ("
 			"CODRESERVA NUMBER PRIMARY KEY, "
 			"CLIENTE TEXT, "
