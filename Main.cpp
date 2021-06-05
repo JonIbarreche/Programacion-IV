@@ -29,18 +29,11 @@ int main(void) {
 	char clave_buscar[20];
 	bool encontrado;
 
-	sqlite3 *db;
 
-	int result = sqlite3_open("test.sqlite", &db);
-		if (result != SQLITE_OK) {
-			printf("Error opening database\n");
-			return result;
-		}
-
-		printf("Database opened\n") ;
-
-		//creartablas();
-
+	Base1 a;
+	a.baseiniciar();
+	a.creartablas();
+	//a.registrarLibro();
 
 	while (bucle) {
 		printf("Menu Principal\n\n");

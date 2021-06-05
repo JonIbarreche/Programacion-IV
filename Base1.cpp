@@ -9,11 +9,7 @@
 #include "sqlite3.h"
 
 using namespace std;
-/*Base1::Base1() {
- // TODO Auto-generated constructor stub
 
- }
- */
 Base1::~Base1() {
 	// TODO Auto-generated destructor stub
 }
@@ -33,6 +29,23 @@ static int callback(void *data, int argc, char **argv, char **azColName) {
 	printf("\n");
 	return 0;
 }
+
+void Base1::baseiniciar() {
+
+	int res;
+	/* Open database */
+	res = sqlite3_open("data.db", &db);
+	if (res) {
+		fprintf(stderr, "No puedo abrir la base de datos: %s\n",
+				sqlite3_errmsg(db));
+		exit(0);
+	} else {
+		fprintf(stderr, "Base de datos OK\n");
+	}
+	/* Create SQL statement */
+
+}
+
 void Base1::creartablas() {
 	char *error = 0;
 	int res, res1, res2;
@@ -41,21 +54,21 @@ void Base1::creartablas() {
 	const char *sql2;
 
 	sql = "CREATE TABLE Libros ("
-			"nSerie NUMBER PRIMARY KEY, "
-			"titulo TEXT, "
-			"autor TEXT, "
-			"precio NUMBER ,";
+			"NSerie NUMBER PRIMARY KEY, "
+			"Titulo TEXT, "
+			"Autor TEXT, "
+			"Precio NUMBER );";
 
-	sql2 = "CREATE TABLE Libros ("
-				"id NUMBER PRIMARY KEY, "
-				"nombre TEXT, "
-				"ubicacion TEXT, "
-				"Libros TEXT ,";
+	sql1 = "CREATE TABLE Biblioteca ("
+			"Id NUMBER PRIMARY KEY, "
+			"Nombre TEXT, "
+			"Ubicacion TEXT, "
+			"CodLib NUMBER references Libro(NSerie);";
 
-	sql1 = "CREATE TABLE Reserva ("
+	sql2 = "CREATE TABLE Reserva ("
 			"CodReserva NUMBER PRIMARY KEY, "
 			"Cliente TEXT, "
-			"CodLib NUMBER references Libro(CodLib), "
+			"CodLib NUMBER references Libro(NSerie), "
 			"Dia NUMBER ,"
 			"Hora NUMBER);";
 
@@ -74,41 +87,27 @@ void Base1::creartablas() {
 	} else {
 
 	}
-	res2 = sqlite3_exec(db, sql2, NULL, 0, &error);
-		if (res1 != SQLITE_OK) {
-			fprintf(stderr, "Error: %s\n", error);
-			sqlite3_free(error);
-		} else {
-
-		}
-}
-void Base1::baseiniciar() {
-
-	int res;
-	/* Open database */
-	res = sqlite3_open("data.db", &db);
-	if (res) {
-		fprintf(stderr, "No puedo abrir la base de datos: %s\n", sqlite3_errmsg(db));
-		exit(0);
+	res2 = sqlite3_exec(db, sql1, NULL, 0, &error);
+	if (res1 != SQLITE_OK) {
+		fprintf(stderr, "Error: %s\n", error);
+		sqlite3_free(error);
 	} else {
-		fprintf(stderr, "Base de datos OK\n");
+
 	}
-	/* Create SQL statement */
 
 }
+
 
 void Base1::registrarLibro() {
 	baseiniciar();
 	int res, res1, res2;
 	char *error = 0;
-	char *error1 = 0;
-	char *error2 = 0;
 	char const *sql =
-			"INSERT INTO Libros(nSerie, titulo, autor, precio) VALUES(11, 'Profundis', 'OscarWilde', 20);";
+			"INSERT INTO Libros(nSerie, titulo, autor,  precio) VALUES(11, 'Profundis', 'OscarWilde', 20);";
 	char const *sql1 =
-			"INSERT INTO Libros(nSerie, titulo, autor, precio) VALUES(12, 'LaIsla', 'JulioVerne', ,35);";
+			"INSERT INTO Libros(nSerie, titulo, autor, precio) VALUES(12, 'LaIsla', 'JulioVerne', 35);";
 	char const *sql2 =
-			"INSERT INTO Libros(CodLib, Nombre, Autor, NumHojas, precio) VALUES(13, 'Profundis', 'OscarWilde',19);";
+			"INSERT INTO Libros(nSerie, titulo, autor, precio) VALUES(13, 'Profundis', 'OscarWilde', 19);";
 	res = sqlite3_exec(db, sql, NULL, 0, &error);
 	if (res != SQLITE_OK) {
 		fprintf(stderr, "Error: %s\n", error);
@@ -116,14 +115,14 @@ void Base1::registrarLibro() {
 	} else {
 		fprintf(stdout, "Libro añadido!\n");
 	}
-	res1 = sqlite3_exec(db, sql1, NULL, 0, &error1);
+	res1 = sqlite3_exec(db, sql1, NULL, 0, &error);
 	if (res1 != SQLITE_OK) {
 		fprintf(stderr, "Error: %s\n", error);
 		sqlite3_free(error);
 	} else {
 		fprintf(stdout, "Libro Añadido!\n");
 	}
-	res2 = sqlite3_exec(db, sql2, NULL, 0, &error2);
+	res2 = sqlite3_exec(db, sql2, NULL, 0, &error);
 	if (res2 != SQLITE_OK) {
 		fprintf(stderr, "Error: %s\n", error);
 		sqlite3_free(error);
@@ -134,15 +133,11 @@ void Base1::registrarLibro() {
 void Base1::leerLibro() {
 	baseiniciar();
 	sqlite3_stmt *stmt;
-	char *t;
-	char *ec;
 
 	sqlite3_prepare_v2(db, "select * from Libros", -1, &stmt, NULL);
 	sqlite3_exec(db, "SELECT * FROM Libros", callback, 0, NULL);
 
 }
-
-
 
 void Base1::registrarReserva() {
 	baseiniciar();
@@ -214,8 +209,6 @@ void Base1::leerReserva() {
 	sqlite3_exec(db, "SELECT * FROM Reserva", callback, 0, NULL);
 
 }
-
-
 
 void Base1::cerrar() {
 	sqlite3_close(db);

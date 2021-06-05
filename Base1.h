@@ -19,17 +19,20 @@ public:
 
 	//Base1();
 	virtual ~Base1();
+
 	void baseiniciar();
+	void creartablas();
 
 	void registrarLibro();
 	void registrarReserva();
 	void registrarBiblioteca();
 
+	void leerBiblioteca();
 	void leerReserva();
 	void leerLibro();
 
 	void cerrar();
-	void creartablas();
+
 
 	sqlite3* getc();
 
