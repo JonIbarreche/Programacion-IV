@@ -37,7 +37,8 @@ void Base1::baseiniciar() {
 	res = sqlite3_open("data.db", &db);
 
 	if (res) {
-		fprintf(stderr, "No puedo abrir la base de datos: %s\n", sqlite3_errmsg(db));
+		fprintf(stderr, "No puedo abrir la base de datos: %s\n",
+				sqlite3_errmsg(db));
 		exit(0);
 	} else {
 		fprintf(stderr, "Base de datos OK\n");
@@ -88,8 +89,8 @@ void Base1::creartablas() {
 	} else {
 
 	}
-	res2 = sqlite3_exec(db, sql1, NULL, 0, &error);
-	if (res1 != SQLITE_OK) {
+	res2 = sqlite3_exec(db, sql2, NULL, 0, &error);
+	if (res2 != SQLITE_OK) {
 		fprintf(stderr, "Error: %s\n", error);
 		sqlite3_free(error);
 	} else {
@@ -97,7 +98,6 @@ void Base1::creartablas() {
 	}
 
 }
-
 
 void Base1::registrarLibro() {
 	baseiniciar();
@@ -187,24 +187,23 @@ void Base1::leerReserva() {
 
 void Base1::registrarBiblioteca() {
 	baseiniciar();
-	int bib, bib1;
+	int res, res1;
 	char *error = 0;
-	char *error1 = 0;
 	char const *sql =
 			"INSERT INTO BIBLIOTECA(ID, NOMBRE, UBICACION, CODLIB) VALUES(1, 'Biblio1','Gazteiz', 11);";
 	char const *sql1 =
 			"INSERT INTO BIBLIOTECA(ID, NOMBRE, UBICACION, CODLIB) VALUES(2, 'Biblio2', 'Bilbao', 12);";
 
-	bib = sqlite3_exec(db, sql, NULL, 0, &error);
-	if (error != SQLITE_OK) {
+	res = sqlite3_exec(db, sql, NULL, 0, &error);
+	if (res != SQLITE_OK) {
 		fprintf(stderr, "Error: %s\n", error);
 		sqlite3_free(error);
 	} else {
 		fprintf(stdout, "Biblioteca añadida!\n");
 	}
-	bib1 = sqlite3_exec(db, sql1, NULL, 0, &error1);
-	if (error1 != SQLITE_OK) {
-		fprintf(stderr, "Error: %s\n", error1);
+	res1 = sqlite3_exec(db, sql1, NULL, 0, &error);
+	if (res1 != SQLITE_OK) {
+		fprintf(stderr, "Error: %s\n", error);
 		sqlite3_free(error);
 	} else {
 		fprintf(stdout, "Biblioteca añadida!\n");
@@ -222,7 +221,6 @@ void Base1::leerBiblioteca() {
 	sqlite3_exec(db, "SELECT * from BIBLIOTECA", callback, 0, NULL);
 
 }
-
 
 void Base1::cerrar() {
 	sqlite3_close(db);

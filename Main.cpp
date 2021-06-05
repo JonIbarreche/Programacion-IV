@@ -29,14 +29,12 @@ int main(void) {
 	char clave_buscar[20];
 	bool encontrado;
 
-
 	Base1 a;
 	a.baseiniciar();
 	a.creartablas();
 	a.registrarBiblioteca();
-	//a.registrarLibro();
-	//a.registrarReserva();
-
+	a.registrarLibro();
+	a.registrarReserva();
 
 	while (bucle) {
 		printf("Menu Principal\n\n");
