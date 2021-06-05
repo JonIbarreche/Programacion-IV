@@ -12,8 +12,8 @@
 #include "Cliente.h"
 #include "Libro.h"
 
-
-
+#include "sqlite3.h"
+#include "Base1.h"
 
 int main(void) {
 	setbuf(stdout, NULL);
@@ -28,6 +28,18 @@ int main(void) {
 	char nombre_buscar[20];
 	char clave_buscar[20];
 	bool encontrado;
+
+	sqlite3 *db;
+
+	int result = sqlite3_open("test.sqlite", &db);
+		if (result != SQLITE_OK) {
+			printf("Error opening database\n");
+			return result;
+		}
+
+		printf("Database opened\n") ;
+
+		//creartablas();
 
 
 	while (bucle) {
