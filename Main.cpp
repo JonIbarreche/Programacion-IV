@@ -33,7 +33,10 @@ int main(void) {
 	Base1 a;
 	a.baseiniciar();
 	a.creartablas();
+	a.registrarBiblioteca();
 	//a.registrarLibro();
+	//a.registrarReserva();
+
 
 	while (bucle) {
 		printf("Menu Principal\n\n");
