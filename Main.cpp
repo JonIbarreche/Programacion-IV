@@ -38,7 +38,8 @@ int main(void) {
 	//a.leerLibro();
 	//a.leerBiblioteca();
 	//a.leerReserva();
-
+	//int result ;
+	//result= showAllBibliotecas(a);
 	while (bucle) {
 		printf("Menu Principal\n\n");
 		printf("\n   Escoge una opción:");
@@ -89,6 +90,7 @@ int main(void) {
 					break;
 				case 2:
 					printf("\n Informacion de las bibliotecas.");
+					a.leerBiblioteca();
 					break;
 				}
 				printf("\n\n\n");
