@@ -78,19 +78,19 @@ int main(void) {
 				printf("\n   Inicio de sesión con exito! ");
 				printf("\n");
 				printf("\n   Seleccione acción: ");
-				printf("\n   1. Escoger biblioteca. ");
-				printf("\n   2. Informacion de la biblioteca. ");
+				printf("\n   1. Escoger libro. ");
+				printf("\n   2. Informacion de los libros. ");
 				fflush(stdin);
 				scanf("%d", &opcion);
 
 				switch (opcion) {
 
 				case 1:
-					printf("\n Biblioteca escogida");
+					printf("\n libro escogido");
 					break;
 				case 2:
-					printf("\n Informacion de las bibliotecas.");
-					a.leerBiblioteca();
+					printf("\n Informacion de los libros.");
+					a.leerLibro();
 					break;
 				}
 				printf("\n\n\n");
