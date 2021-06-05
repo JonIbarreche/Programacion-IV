@@ -62,12 +62,11 @@ void Biblioteca::aniadirLibros(Libro * libro){
 		delete [] this->libros;
 		this->libros = libros;
 }
-/*void Biblioteca::imprimirLibros(){
-
+void Biblioteca::imprimirLibros(){
 	for (int i = 0;i < this->num_libro;i++)  {
-			cout << "Libro " << i+1 << ": " << this->libros[i].getNSerie() << ",s " << this->libros[i].getTitulo() << ", " <<" " << this->libros[i].getAutor() <<", "  << this->libros[i].getPrecio() << endl;
+	cout << "Libro " << i+1 << ": " << this->libros[i]->getNSerie() << ", " << this->libros[i]->getTitulo() << ", " <<" " << this->libros[i]->getAutor() <<", "  << this->libros[i]->getPrecio() << endl;
 }
-}*/
+}
 
 int showAllBibliotecas(sqlite3 *db) {
 	sqlite3_stmt *stmt;
