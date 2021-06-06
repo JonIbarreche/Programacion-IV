@@ -21,6 +21,11 @@ int main(void) {
 	int opcion1;
 	bool bucle = true;
 
+	int idl;
+	char*tit;
+	char*autor;
+	int prec;
+
 	char nombre[20];
 	char clave[20];
 	char cadena[100];
@@ -198,16 +203,22 @@ int main(void) {
 					break;
 				case 3:
 				{
-					int res;
-					char *error = 0;
-					char const *sql = "INSERT INTO LIBROS (NSERIE, TITULO, AUTOR, PRECIO) VALUES(14, 'Extranjero', 'Albert', 54);";
 
-					if (res != SQLITE_OK) {
-							fprintf(stderr, "Error: %s\n", error);
-							sqlite3_free(error);
-						} else {
-							fprintf(stdout, "Libro añadido!\n");
-						}
+					printf("\n  Escribe el nserie del libro  ");
+					fflush(stdin);
+					scanf("%d", &idl);
+					printf("\n  Escribe el titulo del libro  ");
+					fflush(stdin);
+					scanf("%s", tit);
+					printf("\n  Escribe el autor del libro  ");
+					fflush(stdin);
+					scanf("%s", autor);
+					printf("\n  Escribe el precio del libro  ");
+					fflush(stdin);
+					scanf("%d", &prec);
+					a.insertar1Libro(idl,tit,autor,prec);
+
+					break;
 				}
 					break;
 
