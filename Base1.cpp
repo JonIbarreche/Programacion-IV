@@ -178,6 +178,48 @@ void Base1::leer1Libro(int nserie) {
 	}
 	}
 
+void Base1::insertar1Libro(int nserie, char* titulo, char* autor, int precio) {
+	baseiniciar();
+	sqlite3_stmt *stmt;
+
+	//Convertimos el entero con el numero de serie a buscar a un array de char y asi poder concatenarlo a la select
+	char cadena[100] = "INSERT INTO LIBROS where NSERIE = ";
+	char cad[100];
+	sprintf(cad, "%d", nserie);
+	sprintf(cad, "%s", titulo);
+	sprintf(cad, "%s", autor);
+	sprintf(cad, "%d", precio);
+
+	strcat(cadena, cad);
+	int result = sqlite3_prepare_v2(db, cadena, -1, &stmt, NULL);
+	if (result != SQLITE_OK) {
+		printf("Error preparing statement (INSERT)\n");
+		printf("%s\n", sqlite3_errmsg(db));
+		return;
+	}
+
+	char tit[100];
+		char autr[100];
+
+	result = sqlite3_step(stmt) ;
+	if (result == SQLITE_ROW) {
+		int serie = sqlite3_column_int(stmt, 0);
+		strcpy(tit, (char *) sqlite3_column_text(stmt, 1));
+		strcpy(autr, (char *) sqlite3_column_text(stmt, 2));
+		int precio = sqlite3_column_int(stmt, 3);
+		printf("N.Serie: %d Titulo: %s Autor: %s Precio: %d\n", serie, titulo, autor, precio);
+	} else {
+		printf("No añadido libro  %d\n", nserie);
+	}
+
+	result = sqlite3_finalize(stmt);
+	if (result != SQLITE_OK) {
+		printf("Error finalizing statement (INSERT)\n");
+		printf("%s\n", sqlite3_errmsg(db));
+		return;
+	}
+	}
+
 void Base1::registrarReserva() {
 	baseiniciar();
 	int res, res1, res2;
