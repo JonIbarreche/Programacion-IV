@@ -259,7 +259,45 @@ void Base1::leerBiblioteca() {
 	sqlite3_exec(db, "SELECT * from BIBLIOTECA", callback, 0, NULL);
 
 }
+void Base1::leer1Biblioteca(int nserie) {
+	baseiniciar();
+	sqlite3_stmt *stmt;
 
+	//Convertimos el entero con el numero de serie a buscar a un array de char y asi poder concatenarlo a la select
+	char cadena[100] = "SELECT * from BIBLIOTECA where NSERIE = ";
+	char cad[100];
+	sprintf(cad, "%d", nserie);
+
+	strcat(cadena, cad);
+	int result = sqlite3_prepare_v2(db, cadena, -1, &stmt, NULL);
+	if (result != SQLITE_OK) {
+		printf("Error preparing statement (SELECT)\n");
+		printf("%s\n", sqlite3_errmsg(db));
+		return;
+	}
+
+	char nombre[100];
+	char ubicacion[100];
+
+	result = sqlite3_step(stmt) ;
+	if (result == SQLITE_ROW) {
+		int serie = sqlite3_column_int(stmt, 0);
+		strcpy(nombre, (char *) sqlite3_column_text(stmt, 1));
+		strcpy(ubicacion, (char *) sqlite3_column_text(stmt, 2));
+		int id = sqlite3_column_int(stmt, 0);
+
+		printf("id: %d nombre: %s ubicacion: %s N.Serie: %d\n", id, nombre, ubicacion, serie);
+	} else {
+		printf("No encontrado biblio con n.serie: %d\n", nserie);
+	}
+
+	result = sqlite3_finalize(stmt);
+	if (result != SQLITE_OK) {
+		printf("Error finalizing statement (SELECT)\n");
+		printf("%s\n", sqlite3_errmsg(db));
+		return;
+	}
+	}
 void Base1::cerrar() {
 	sqlite3_close(db);
 }
