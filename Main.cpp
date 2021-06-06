@@ -21,10 +21,9 @@ int main(void) {
 	int opcion1;
 	bool bucle = true;
 
-	int idl;
-	char*tit;
-	char*autor;
-	int prec;
+	int idl, prec;
+		char tit[100];
+		char autor[100];
 
 	char nombre[20];
 	char clave[20];
@@ -205,20 +204,20 @@ int main(void) {
 				{
 
 					printf("\n  Escribe el nserie del libro  ");
-					fflush(stdin);
-					scanf("%d", &idl);
-					printf("\n  Escribe el titulo del libro  ");
-					fflush(stdin);
-					scanf("%s", &tit);
-					printf("\n  Escribe el autor del libro  ");
-					fflush(stdin);
-					scanf("%s", &autor);
-					printf("\n  Escribe el precio del libro  ");
-					fflush(stdin);
-					scanf("%d", &prec);
+						fflush(stdin);
+						scanf("%d", &idl);
+						printf("\n  Escribe el titulo del libro  ");
+						fflush(stdin);
+						scanf("%s", &tit);
+						printf("\n  Escribe el autor del libro  ");
+						fflush(stdin);
+						scanf("%s", &autor);
+						printf("\n  Escribe el precio del libro  ");
+						fflush(stdin);
+						scanf("%d", &prec);
 
-					a.insertar1Libro(idl,tit,autor,prec);
-					a.leer1Libro(idl);
+						a.insertar1Libro(idl,tit,autor,prec);
+						a.leer1Libro(idl);
 					break;
 				}
 					break;
