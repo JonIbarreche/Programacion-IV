@@ -209,15 +209,16 @@ int main(void) {
 					scanf("%d", &idl);
 					printf("\n  Escribe el titulo del libro  ");
 					fflush(stdin);
-					scanf("%s", tit);
+					scanf("%s", &tit);
 					printf("\n  Escribe el autor del libro  ");
 					fflush(stdin);
-					scanf("%s", autor);
+					scanf("%s", &autor);
 					printf("\n  Escribe el precio del libro  ");
 					fflush(stdin);
 					scanf("%d", &prec);
-					a.insertar1Libro(idl,tit,autor,prec);
 
+					a.insertar1Libro(idl,tit,autor,prec);
+					a.leer1Libro(idl);
 					break;
 				}
 					break;
