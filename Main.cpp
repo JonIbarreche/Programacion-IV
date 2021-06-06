@@ -181,8 +181,20 @@ int main(void) {
 					printf("\n Libro devuelto.");
 					break;
 				case 3:
-					printf("\n Libro añadido.");
+				{
+					int res;
+					char *error = 0;
+					char const *sql = "INSERT INTO LIBROS (NSERIE, TITULO, AUTOR, PRECIO) VALUES(14, 'Extranjero', 'Albert', 54);";
+
+					if (res != SQLITE_OK) {
+							fprintf(stderr, "Error: %s\n", error);
+							sqlite3_free(error);
+						} else {
+							fprintf(stdout, "Libro añadido!\n");
+						}
+				}
 					break;
+
 				case 4:
 					printf("\n Libro eliminado.");
 					break;
