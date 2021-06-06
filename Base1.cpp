@@ -259,19 +259,42 @@ void Base1::leerReserva() {
 
 }
 
-//void borrarLibro(){
-//	int res, res1, res2;
-//	char *error = 0;
-//	char *sql;
-//	sql = "DELETE from LIBROS where ID=11; ";
-//	res = sqlite3_exec(db, sql, NULL, 0, &error);
-//		if (res != SQLITE_OK) {
-//			fprintf(stderr, "Error: %s\n", error);
-//			sqlite3_free(error);
-//		} else {
-//			fprintf(stdout, "Libro eliminado!\n");
-//		}
-//}
+void borrarLibro(int nserie){
+		baseiniciar();
+		sqlite3_stmt *stmt;
+
+		//Convertimos el entero con el numero de serie a buscar a un array de char y asi poder concatenarlo a la select
+		char cadena[100] = "DELETE * from LIBROS where NSERIE = ";
+		char cad[100];
+		sprintf(cad, "%d", nserie);
+
+		strcat(cadena, cad);
+		int result = sqlite3_prepare_v2(db, cadena, -1, &stmt, NULL);
+		if (result != SQLITE_OK) {
+			printf("Error preparing statement (DELETE)\n");
+			printf("%s\n", sqlite3_errmsg(db));
+			return;
+		}
+
+		char titulo[100];
+		char autor[100];
+
+		result = sqlite3_step(stmt) ;
+		if (result == SQLITE_ROW) {
+
+			printf("LIBRO BORRADO CORRECTAMENTE");
+		} else {
+			printf("No encontrado libro con n.serie: %d\n", nserie);
+		}
+
+		result = sqlite3_finalize(stmt);
+		if (result != SQLITE_OK) {
+			printf("Error finalizing statement (DELETE)\n");
+			printf("%s\n", sqlite3_errmsg(db));
+			return;
+		}
+
+}
 //
 //void borrarbiblioteca(){
 //
