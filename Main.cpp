@@ -181,7 +181,7 @@ int main(void) {
 				printf("\n   Inicio de sesión con exito! ");
 				printf("\n");
 				printf("\n   Seleccione acción: ");
-				printf("\n   1. Reservar libro. ");
+				printf("\n   1. Ver reservas. ");
 				printf("\n   2. Devolver libro. ");
 				printf("\n   3. Añadir libro. ");
 				printf("\n   4. Eliminar libro. ");
@@ -191,7 +191,7 @@ int main(void) {
 				switch (opcion) {
 
 				case 1:
-					printf("\n Libro reservado.");
+					a.leerReserva();
 					break;
 				case 2:
 					printf("\n Libro devuelto.");
