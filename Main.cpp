@@ -203,15 +203,16 @@ int main(void) {
 				case 3:
 				{
 
-					printf("\n  Escribe el nserie del libro  ");
+
+						printf("\n  Escribe el nserie del libro  ");
 						fflush(stdin);
 						scanf("%d", &idl);
 						printf("\n  Escribe el titulo del libro  ");
 						fflush(stdin);
-						scanf("%s", &tit);
+						gets(tit);
 						printf("\n  Escribe el autor del libro  ");
 						fflush(stdin);
-						scanf("%s", &autor);
+						gets(autor);
 						printf("\n  Escribe el precio del libro  ");
 						fflush(stdin);
 						scanf("%d", &prec);
