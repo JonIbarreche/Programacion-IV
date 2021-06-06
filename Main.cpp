@@ -220,7 +220,10 @@ int main(void) {
 					break;
 
 				case 4:
-					printf("\n Libro eliminado.");
+					printf("\n  Escribe el nserie del libro  ");
+						fflush(stdin);
+						scanf("%d", &opcion);
+						a.borrarLibro(opcion);
 					break;
 				}
 				printf("\n\n\n");
