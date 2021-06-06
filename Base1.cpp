@@ -164,7 +164,7 @@ void Base1::leer1Libro(int nserie) {
 		int serie = sqlite3_column_int(stmt, 0);
 		strcpy(titulo, (char *) sqlite3_column_text(stmt, 1));
 		strcpy(autor, (char *) sqlite3_column_text(stmt, 2));
-		int precio = sqlite3_column_int(stmt, 0);
+		int precio = sqlite3_column_int(stmt, 3);
 		printf("N.Serie: %d Titulo: %s Autor: %s Precio: %d\n", serie, titulo, autor, precio);
 	} else {
 		printf("No encontrado libro con n.serie: %d\n", nserie);
@@ -176,7 +176,8 @@ void Base1::leer1Libro(int nserie) {
 		printf("%s\n", sqlite3_errmsg(db));
 		return;
 	}
-	}
+
+}
 
 void Base1::insertar1Libro(int nserie, char* titulo, char* autor, int precio) {
 	baseiniciar();
@@ -334,7 +335,7 @@ void Base1::leer1Biblioteca(int nserie) {
 
 	result = sqlite3_step(stmt) ;
 	if (result == SQLITE_ROW) {
-		int serie = sqlite3_column_int(stmt, 0);
+		int serie = sqlite3_column_int(stmt,3);
 		strcpy(nombre, (char *) sqlite3_column_text(stmt, 1));
 		strcpy(ubicacion, (char *) sqlite3_column_text(stmt, 2));
 		int id = sqlite3_column_int(stmt, 0);
