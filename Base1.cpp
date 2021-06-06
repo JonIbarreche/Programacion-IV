@@ -259,7 +259,7 @@ void Base1::leerReserva() {
 
 }
 
-void borrarLibro(int nserie){
+void Base1::borrarLibro(int nserie){
 		baseiniciar();
 		sqlite3_stmt *stmt;
 
@@ -276,8 +276,6 @@ void borrarLibro(int nserie){
 			return;
 		}
 
-		char titulo[100];
-		char autor[100];
 
 		result = sqlite3_step(stmt) ;
 		if (result == SQLITE_ROW) {
