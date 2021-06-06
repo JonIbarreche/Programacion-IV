@@ -90,7 +90,23 @@ int main(void) {
 					fflush(stdin);
 					scanf("%d", &opcion);
 					a.leer1Libro(opcion);
-					break;
+					printf("\n   Desea ver en que biblioteca esta? ");
+									printf("\n");
+									printf("\n   Seleccione acción: ");
+									printf("\n   1. si ");
+									printf("\n   2. no ");
+									fflush(stdin);
+									scanf("%d", &opcion1);
+									switch (opcion1) {
+									case 1:
+										a.leer1Biblioteca(opcion);
+										break;
+									case 2:
+										break;
+
+									}
+									break;
+
 				case 2:
 					printf("\n Informacion de los libros.");
 					a.leerLibro();

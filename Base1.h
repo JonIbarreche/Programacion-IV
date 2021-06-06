@@ -31,6 +31,7 @@ public:
 	void leerReserva();
 	void leerLibro();
 	void leer1Libro(int);
+	void leer1Biblioteca(int );
 	void cerrar();
 
 
