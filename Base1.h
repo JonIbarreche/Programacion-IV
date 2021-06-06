@@ -31,7 +31,7 @@ public:
 	void leerReserva();
 	void leerLibro();
 	void leer1Libro(int);
-	void insertar1Libro(int nserie, char* titulo, char* autor, int precio);
+	void insertar1Libro(int, char *, char *, int);
 	void leer1Biblioteca(int );
 	void cerrar();
 
