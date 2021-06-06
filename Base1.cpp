@@ -258,6 +258,24 @@ void Base1::leerReserva() {
 
 }
 
+void borrarLibro(){
+	int res, res1, res2;
+	char *error = 0;
+	char *sql;
+	sql = "DELETE from LIBROS where ID=11; ";
+	res = sqlite3_exec(db, sql, NULL, 0, &error);
+		if (res != SQLITE_OK) {
+			fprintf(stderr, "Error: %s\n", error);
+			sqlite3_free(error);
+		} else {
+			fprintf(stdout, "Libro eliminado!\n");
+		}
+}
+
+void borrarbiblioteca(){
+
+
+}
 void Base1::registrarBiblioteca() {
 	baseiniciar();
 	int res, res1;
@@ -333,6 +351,9 @@ void Base1::leer1Biblioteca(int nserie) {
 		return;
 	}
 	}
+
+
+
 void Base1::cerrar() {
 	sqlite3_close(db);
 }

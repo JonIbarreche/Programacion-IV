@@ -39,11 +39,7 @@ int main(void) {
 	a.registrarBiblioteca();
 	a.registrarLibro();
 	a.registrarReserva();
-	//a.leerLibro();
-	//a.leerBiblioteca();
-	//a.leerReserva();
-	//int result ;
-	//result= showAllBibliotecas(a);
+
 	while (bucle) {
 		printf("Menu Principal\n\n");
 		printf("\n   Escoge una opción:");
