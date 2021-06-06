@@ -35,7 +35,7 @@ public:
 	void leer1Biblioteca(int );
 	void cerrar();
 
-	void borrarLibro();
+	void borrarLibro(int);
 	void borrarReserva();
 
 	sqlite3* getc();
