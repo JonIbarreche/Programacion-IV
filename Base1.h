@@ -30,7 +30,7 @@ public:
 	void leerBiblioteca();
 	void leerReserva();
 	void leerLibro();
-
+	void leer1Libro(int);
 	void cerrar();
 
 

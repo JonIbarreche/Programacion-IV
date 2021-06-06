@@ -139,6 +139,44 @@ void Base1::leerLibro() {
 	sqlite3_exec(db, "SELECT * from LIBROS", callback, 0, NULL);
 
 }
+void Base1::leer1Libro(int nserie) {
+	baseiniciar();
+	sqlite3_stmt *stmt;
+
+	//Convertimos el entero con el numero de serie a buscar a un array de char y asi poder concatenarlo a la select
+	char cadena[100] = "SELECT * from LIBROS where NSERIE = ";
+	char cad[100];
+	sprintf(cad, "%d", nserie);
+
+	strcat(cadena, cad);
+	int result = sqlite3_prepare_v2(db, cadena, -1, &stmt, NULL);
+	if (result != SQLITE_OK) {
+		printf("Error preparing statement (SELECT)\n");
+		printf("%s\n", sqlite3_errmsg(db));
+		return;
+	}
+
+	char titulo[100];
+	char autor[100];
+
+	result = sqlite3_step(stmt) ;
+	if (result == SQLITE_ROW) {
+		int serie = sqlite3_column_int(stmt, 0);
+		strcpy(titulo, (char *) sqlite3_column_text(stmt, 1));
+		strcpy(autor, (char *) sqlite3_column_text(stmt, 2));
+		int precio = sqlite3_column_int(stmt, 0);
+		printf("N.Serie: %d Titulo: %s Autor: %s Precio: %d\n", serie, titulo, autor, precio);
+	} else {
+		printf("No encontrado libro con n.serie: %d\n", nserie);
+	}
+
+	result = sqlite3_finalize(stmt);
+	if (result != SQLITE_OK) {
+		printf("Error finalizing statement (SELECT)\n");
+		printf("%s\n", sqlite3_errmsg(db));
+		return;
+	}
+	}
 
 void Base1::registrarReserva() {
 	baseiniciar();

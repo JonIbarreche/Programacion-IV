@@ -86,7 +86,10 @@ int main(void) {
 				switch (opcion) {
 
 				case 1:
-					printf("\n libro escogido");
+					printf("\n  Escribe el nserie del libro  ");
+					fflush(stdin);
+					scanf("%d", &opcion);
+					a.leer1Libro(opcion);
 					break;
 				case 2:
 					printf("\n Informacion de los libros.");
