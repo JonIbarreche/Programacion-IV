@@ -50,7 +50,8 @@ Biblioteca::Biblioteca(Biblioteca &b){
 }
 Biblioteca::~Biblioteca(){
 
-
+delete [] this->nombre;
+delete[] this->ubicacion;
 }
 void Biblioteca::aniadirLibros(Libro * libro){
 	Libro **libros = new Libro *[this->num_libro + 1];

@@ -48,5 +48,7 @@ Cliente::Cliente(Cliente &c){
 
 Cliente::~Cliente() {
 	// TODO Auto-generated destructor stub
+	delete [] this->email;
+	delete [] this->nombre;
 }
 
