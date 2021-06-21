@@ -19,7 +19,7 @@ ConEdicion::ConEdicion( const int nSerie,const char *titulo, const char *autor, 
 	for (int i = 0; i < num_ediciones; i++) {
 
 
-	this->nombreEdicion[i] = new char[i][nombreEdicion];
+	//this->nombreEdicion[i] = new char[i][nombreEdicion];
 	}
 
 }
@@ -37,5 +37,12 @@ delete[] this->nombreEdicion;
 }
 
 void ConEdicion::imprimir(){
-
+	Libro::imprimir();
+		cout << endl;
+		cout << "LLibro:" << endl;
+		cout << "-----" << endl;
+		for (int j=0;j<this->num_ediciones;j++)
+		{
+			cout << "ediciones" << j+1 << ": " << this->nombreEdicion[j];
+		}
 }
