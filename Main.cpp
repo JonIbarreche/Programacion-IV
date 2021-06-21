@@ -11,10 +11,9 @@
 #include "Biblioteca.h"
 #include "Cliente.h"
 #include "Libro.h"
-#include "ConEdicion.h"
-
 #include "sqlite3.h"
 #include "Base1.h"
+#include "LibroPapel.h"
 
 int main(void) {
 	setbuf(stdout, NULL);

@@ -1,19 +1,20 @@
 /*
- * ConEdicion.cpp
+ * LibroDigital.cpp
  *
  *  Created on: 21 jun. 2021
  *      Author: leire
  */
 
-#include "ConEdicion.h"
+
 #include <iostream>
 #include <string.h>
 
+#include "LibroDigital.h"
 #include "sqlite3.h"
 
 using namespace std;
 
-ConEdicion::ConEdicion( const int nSerie,const char *titulo, const char *autor, const int precio, int num_ediciones, char **nombreEdicion):Libro(nSerie,titulo,autor,precio){
+LibroDigital::LibroDigital( const int nSerie,const char *titulo, const char *autor, const int precio, int num_ediciones, char **nombreEdicion):Libro(nSerie,titulo,autor,precio){
 
 	this->num_ediciones= num_ediciones;
 	for (int i = 0; i < num_ediciones; i++) {
@@ -24,7 +25,7 @@ ConEdicion::ConEdicion( const int nSerie,const char *titulo, const char *autor, 
 
 }
 
-/*ConEdicion::ConEdicion(const ConEdicion &ce):Libro(ce) {
+/*LibroDigital::LibroDigital(const LibroDigital &ce):Libro(ce) {
 	this->num_ediciones= ce.num_ediciones;
 		for (int i = 0; i < ce.num_ediciones; i++) {
 
@@ -32,11 +33,11 @@ ConEdicion::ConEdicion( const int nSerie,const char *titulo, const char *autor, 
 		this->nombreEdicion[i] = new char[i][ce.nombreEdicion];
 		}
 }*/
-ConEdicion::~ConEdicion(){
+LibroDigital::~LibroDigital(){
 delete[] this->nombreEdicion;
 }
 
-void ConEdicion::imprimir(){
+void LibroDigital::imprimir(){
 	Libro::imprimir();
 		cout << endl;
 		cout << "LLibro:" << endl;
