@@ -14,6 +14,8 @@
 #include "sqlite3.h"
 #include "Base1.h"
 #include "LibroPapel.h"
+#include "LibroDigital.h"
+
 
 int main(void) {
 	setbuf(stdout, NULL);

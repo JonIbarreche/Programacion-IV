@@ -12,16 +12,18 @@
 
 class LibroDigital: public Libro
 {
-	char** nombreEdicion;
-	int num_ediciones;
+	int diasAlquilados;
 
 public:
-	LibroDigital( const int nSerie,const char *titulo, const char *autor, const int precio, int num_ediciones, char **nombreEdicion);
-	LibroDigital(const LibroDigital &);
-	virtual ~LibroDigital();
 
-	virtual void imprimir();
+	LibroDigital( const int nSerie,const char *titulo, const char *autor, const int precio, int diasAlquilados);
+	LibroDigital( LibroDigital &);
+		virtual ~LibroDigital();
 
+	void setdiasAlquilados(int);
+	int getdiasAlquilados() const;
+
+		virtual void imprimir();
 };
 
 #endif /* LIBRODIGITAL_H_ */
