@@ -20,7 +20,7 @@
 int main(void) {
 
 	//datos prueba
-	//const int nSerie,const char *titulo, const char *autor, const int precio
+
 	Libro l1(1,"libro1","autor1",12);
 	Libro l2(2,"libro2","autor2",10);
 	l1.imprimir();
