@@ -46,7 +46,6 @@ return this->diasAlquilados;
 
 void LibroPapel::imprimir(){
 	Libro::imprimir();
-		cout << endl;
 		cout << "precio total con envio:" << this->getPrecio()+this->getprecioEnvio() << endl;
 		cout << "dias alquilados:" <<this->getdiasAlquilados() << endl;
 

@@ -18,6 +18,19 @@
 
 
 int main(void) {
+
+	//datos prueba
+	//const int nSerie,const char *titulo, const char *autor, const int precio
+	Libro l1(1,"libro1","autor1",12);
+	Libro l2(2,"libro2","autor2",10);
+	l1.imprimir();
+	l2.imprimir();
+
+	LibroDigital ld1(l1.getNSerie(),l1.getTitulo(),l1.getAutor(),l1.getPrecio(),7);
+	ld1.imprimir();
+	LibroPapel lp2(l2.getNSerie(),l2.getTitulo(),l2.getAutor(),l2.getPrecio(),4,7);
+	lp2.imprimir();
+
 	setbuf(stdout, NULL);
 	int opcion;
 	int opcion1;
@@ -313,6 +326,7 @@ int main(void) {
 
 		}
 	}
+
 
 	return 0;
 

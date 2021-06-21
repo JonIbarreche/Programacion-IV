@@ -80,7 +80,7 @@ void Libro::setprecio(int precio){
 
 void Libro::imprimir(){
 cout<< "id:"<<this->nSerie<<endl;
-cout<< "titulo"<< this->getTitulo()<< "autor:"<< this->getAutor()<< "precio" << this->getPrecio()<<endl;
+cout<< "titulo: "<< this->getTitulo()<< "  autor: "<< this->getAutor()<< "  precio:  " << this->getPrecio()<<endl;
 }
 
 int showAllLibros(sqlite3 *db) {

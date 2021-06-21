@@ -40,7 +40,6 @@ return this->diasAlquilados;
 
 void LibroDigital::imprimir(){
 	Libro::imprimir();
-		cout << endl;
 		cout << "dias alquilados:" <<this->getdiasAlquilados() << endl;
 
 }
