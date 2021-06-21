@@ -77,6 +77,9 @@ void Libro::setprecio(int precio){
 	this->precio = precio;
 }
 
+void Libro::imprimir(){
+
+}
 
 int showAllLibros(sqlite3 *db) {
 	sqlite3_stmt *stmt;

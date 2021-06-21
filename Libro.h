@@ -34,6 +34,7 @@ public:
 	void setAutor(char * autor);
 	void setprecio(int precio);
 
+	virtual void imprimir();
 
 	int showAllLibros(sqlite3 *db);
 	int insertNewLibro(sqlite3 *db, char titulo[],char autor[], int precio);
