@@ -11,6 +11,7 @@
 
 #include "sqlite3.h"
 
+using namespace std;
 
 Libro::Libro(const int nSerie,const char *titulo, const char *autor, const int precio){
 
@@ -78,7 +79,8 @@ void Libro::setprecio(int precio){
 }
 
 void Libro::imprimir(){
-
+cout<< "id:"<<this->nSerie<<endl;
+cout<< "titulo"<< this->getTitulo()<< "autor:"<< this->getAutor()<< "precio" << this->getPrecio()<<endl;
 }
 
 int showAllLibros(sqlite3 *db) {
