@@ -29,7 +29,16 @@ public:
 	Biblioteca(Biblioteca &b);
 	void aniadirLibros(Libro *libro);
 	virtual ~Biblioteca();
-	void imprimirLibros();
+
+	int getid() const;
+	char* getnombre() const;
+	char* getubicacion() const;
+		void setid(int id);
+		void setnombre(char * nombre);
+		void setubicacion(char * ubicacion);
+
+
+	void imprimirBiblioteca();
 	int showAllBibliotecas(sqlite3 *db);
 	int insertNewBiblio(sqlite3 *db, char nombre[],char ubicacion[],Libro* libros, int num_libro);
 

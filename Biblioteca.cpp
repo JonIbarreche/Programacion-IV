@@ -63,7 +63,29 @@ void Biblioteca::aniadirLibros(Libro * libro){
 		delete [] this->libros;
 		this->libros = libros;
 }
-void Biblioteca::imprimirLibros(){
+
+int Biblioteca::getid() const{
+return this->id;
+}
+char* Biblioteca::getnombre() const{
+return this->nombre;
+}
+char* Biblioteca::getubicacion() const{
+return this->ubicacion;
+}
+void Biblioteca::setid(int id){
+this->id=id;
+}
+void Biblioteca::setnombre(char * nombre){
+			this->nombre=nombre;
+		}
+void Biblioteca::setubicacion(char * ubicacion){
+	this->ubicacion= ubicacion;
+}
+void Biblioteca::imprimirBiblioteca(){
+
+	cout<< "id:"<< this->getid()<< " nombre biblioteca:"<< this->getnombre()<< "  ubicacion: "<< this->getubicacion()<<endl;
+
 	for (int i = 0;i < this->num_libro;i++)  {
 	cout << "Libro " << i+1 << ": " << this->libros[i]->getNSerie() << ", " << this->libros[i]->getTitulo() << ", " <<" " << this->libros[i]->getAutor() <<", "  << this->libros[i]->getPrecio() << endl;
 }
