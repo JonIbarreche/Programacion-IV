@@ -17,6 +17,6 @@ typedef struct {
 
 } grupoBiblioteca;
 
-void imprimirbibliotecas(Biblioteca b);
+void imprimirbibliotecas(grupoBiblioteca b);
 
 #endif /* SEDEBIBLIOTECA_H_ */
