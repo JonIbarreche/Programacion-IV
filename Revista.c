@@ -10,6 +10,6 @@
 #include "revista.h"
 
 
-void imprimirRevistas(revista r){
-	printf("id.%i  titulo %s autor %s precio=%i" ,r.idrevista,r.titulo, r.autor, r.precio);
+void imprimirRevista(revista r){
+	printf("id.%i  titulo%s autor%s precio=%i" ,r.idrevista,r.titulo, r.autor, r.precio);
 }

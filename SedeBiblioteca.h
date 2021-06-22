@@ -9,14 +9,19 @@
 #define SEDEBIBLIOTECA_H_
 
 
-#include "Biblioteca.h"
+typedef struct {
+	int id;
+	char *nombre;
+	char *ubicacion;
+
+} biblioteca;
 
 typedef struct {
 	int numBibliotecas;
-	Biblioteca * biblioteca;
+	biblioteca * bibliotecas;
 
 } grupoBiblioteca;
-
+void imprimirbiblioteca(biblioteca b);
 void imprimirbibliotecas(grupoBiblioteca b);
 
 #endif /* SEDEBIBLIOTECA_H_ */

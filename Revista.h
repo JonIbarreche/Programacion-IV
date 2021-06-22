@@ -10,13 +10,13 @@
 
 typedef struct {
 	int idrevista;
-	char *titulo;
-	char *autor;
+	char titulo[20];
+	char autor[20];
 	int precio;
 
 } revista;
 
-void imprimirRevistas(revista r);
+void imprimirRevista(revista r);
 
 
 #endif /* REVISTA_H_ */
