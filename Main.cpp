@@ -15,6 +15,9 @@
 #include "Base1.h"
 #include "LibroPapel.h"
 #include "LibroDigital.h"
+#include "SedeBiblioteca.h"
+#include "Revista.h"
+
 
 
 int main(void) {
