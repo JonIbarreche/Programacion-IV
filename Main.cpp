@@ -45,7 +45,7 @@ int main(void) {
 
 	revista r1;
 	r1.idrevista=1;  strcpy(r1.titulo,"Hola"); strcpy(r1.autor,"Agustin"); r1.precio=14;
-	imprimirRevistas(r1);
+	//imprimirRevistas(r1);
 
 	setbuf(stdout, NULL);
 	int opcion;
