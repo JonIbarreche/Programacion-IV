@@ -34,6 +34,14 @@ int main(void) {
 	LibroPapel lp2(l2.getNSerie(),l2.getTitulo(),l2.getAutor(),l2.getPrecio(),4,7);
 	lp2.imprimir();
 
+	Biblioteca b1;
+	b1.setid(1);
+	b1.setnombre("biblioteca1");
+	b1.setubicacion("Bilbao");
+	b1.aniadirLibros(&l1);
+	b1.imprimirBiblioteca();
+
+
 	setbuf(stdout, NULL);
 	int opcion;
 	int opcion1;
