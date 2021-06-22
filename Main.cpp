@@ -41,6 +41,11 @@ int main(void) {
 	b1.aniadirLibros(&l1);
 	b1.imprimirBiblioteca();
 
+	//datos prueba c
+
+	revista r1;
+	r1.idrevista=1;  strcpy(r1.titulo,"Hola"); strcpy(r1.autor,"Agustin"); r1.precio=14;
+	//imprimirRevistas(r1);
 
 	setbuf(stdout, NULL);
 	int opcion;
