@@ -30,3 +30,30 @@ int cuantasRevistas(revista * r, int tamanyo, int precio){
 
 		return cont;
 }
+char** listadoPrecioBarato(revista * r, int tamanyo, int * baratos) {
+	int i, cont = 0;
+	for (i = 0;i < tamanyo;i++) {
+		if (r[i].precio < 15) {
+			cont++;
+		}
+	}
+
+	//Creamos un vector de cont nombres
+	char **lista;
+	lista = (char **) malloc(cont * sizeof(char *));
+	for(i = 0 ; i < cont ; i++){
+		lista[i] = (char *) malloc(30 * sizeof(char));
+	}
+
+	*baratos = cont;
+
+	cont = 0;
+	for (i = 0;i < tamanyo;i++) {
+		if (r[i].precio < 15) {
+			strcpy(lista[cont], r[i].titulo);
+			cont++;
+		}
+	}
+
+	return lista;
+}

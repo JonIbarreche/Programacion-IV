@@ -24,4 +24,5 @@ typedef struct {
 void imprimirRevista(revista r);
 void imprimirRevistas1(Revistas rs);
 int cuantasRevistas(revista * r, int tamanyo, int precio);
+char** listadoPrecioBarato(revista * r, int tamanyo, int * baratos);
 #endif /* REVISTA_H_ */

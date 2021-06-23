@@ -23,7 +23,7 @@
 
 int main(void) {
 
-	//datos prueba
+	//datos prueba c++
 
 	Libro l1(1,"libro1","autor1",12);
 	Libro l2(2,"libro2","autor2",10);
@@ -43,11 +43,14 @@ int main(void) {
 	b1.imprimirBiblioteca();
 
 	//datos prueba c
+		//revistas
 	cout<<"datos prueba c"<<endl;
 	revista r1;
 	r1.idrevista=1;  strcpy(r1.titulo,"Hola"); strcpy(r1.autor,"Agustin"); r1.precio=14;
 	revista r2;
-	r2.idrevista=2;  strcpy(r2.titulo,"Lecturas"); strcpy(r2.autor,"Agustin"); r2.precio=14;
+	r2.idrevista=2;  strcpy(r2.titulo,"Lecturas"); strcpy(r2.autor,"Roberto"); r2.precio=14;
+	revista r3;
+	r3.idrevista=3;  strcpy(r3.titulo,"Corazon"); strcpy(r3.autor,"Carmina"); r3.precio=22;
 	cout<<"imprimir revista"<<endl;
 	imprimirRevista(r1);
 
@@ -60,14 +63,31 @@ int main(void) {
 
 	cout<<"numero de revistas con precio menor que 15="<<endl;
 	revista revistas[5];
-	revistas[0].idrevista=1;strcpy(revistas[0].titulo,"Hola");strcpy(revistas[0].autor,"Hodei");revistas[0].precio=14;
+	revistas[0].idrevista=1;strcpy(revistas[0].titulo,"Hola");strcpy(revistas[0].autor,"Hodei");revistas[0].precio=20;
 	revistas[1].idrevista=2;strcpy(revistas[1].titulo,"Lecturas");strcpy(revistas[1].autor,"Carmen"); revistas[1].precio=14;
 	revistas[2].idrevista=3;strcpy(revistas[2].titulo,"Corazon");strcpy(revistas[2].autor,"Carmina"); revistas[2].precio=20;
 	revistas[3].idrevista=4;strcpy(revistas[3].titulo,"Una");strcpy(revistas[3].autor,"Juan"); revistas[3].precio=20;
-	revistas[4].idrevista=5;strcpy(revistas[0].titulo,"Otra");strcpy(revistas[4].autor,"Pablo"); revistas[4].precio=20;
+	revistas[4].idrevista=5;strcpy(revistas[0].titulo,"Otra");strcpy(revistas[4].autor,"Pablo"); revistas[4].precio=14;
 
 	printf("%i \n",cuantasRevistas(revistas, 5, 15));
+	cout<<"revistas baratas (menos de 15 euros)"<< endl;
+	int baratas;
 
+	revista * revistass;
+	revistass = (revista *)malloc(sizeof(revista) * 3);
+	revistass[0] = r1;
+	revistass[1] = r2;
+	revistass[2] = r3;
+
+	 	char **lista = listadoPrecioBarato(revistass, 5, &baratas);
+		printf("\ revistas baratas:\n");
+		int i;
+		for (i = 0; i < baratas;i++) {
+			printf("%s\n", lista[i]);
+		}
+
+
+		//biblios
 	biblioteca bb1;
 	bb1.id=1; strcpy(bb1.nombre,"biblio1");strcpy(bb1.ubicacion,"Bilbao");
 	biblioteca bb2;
