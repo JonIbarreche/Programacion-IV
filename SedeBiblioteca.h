@@ -11,8 +11,8 @@
 
 typedef struct {
 	int id;
-	char *nombre;
-	char *ubicacion;
+	char nombre[20];
+	char ubicacion[20];
 
 } biblioteca;
 
