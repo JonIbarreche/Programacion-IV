@@ -13,7 +13,7 @@
 
 void imprimirbiblioteca(biblioteca b){
 
-printf("%i %s %s", b.id,b.nombre,b.ubicacion);
+printf("%i %s %s \n", b.id,b.nombre,b.ubicacion);
 
 }
 void imprimirbibliotecas1(grupoBiblioteca b){

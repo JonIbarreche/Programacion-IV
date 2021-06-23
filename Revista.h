@@ -15,8 +15,11 @@ typedef struct {
 	int precio;
 
 } revista;
-
+typedef struct {
+	int numRevistas;
+	revista * revistas;
+} Revistas;
 void imprimirRevista(revista r);
-
+void imprimirRevistas1(Revistas rs);
 
 #endif /* REVISTA_H_ */

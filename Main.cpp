@@ -43,18 +43,33 @@ int main(void) {
 	b1.imprimirBiblioteca();
 
 	//datos prueba c
-
+	cout<<"datos prueba c"<<endl;
 	revista r1;
 	r1.idrevista=1;  strcpy(r1.titulo,"Hola"); strcpy(r1.autor,"Agustin"); r1.precio=14;
+	revista r2;
+	r2.idrevista=2;  strcpy(r2.titulo,"Lecturas"); strcpy(r2.autor,"Agustin"); r2.precio=14;
+	cout<<"imprimir revista"<<endl;
 	imprimirRevista(r1);
+
+	Revistas rr1;
+	rr1.numRevistas=2;
+	rr1.revistas=&r1;
+	rr1.revistas=&r2;
+	cout<<"imprimir revistas"<<endl;
+	imprimirRevistas1(rr1);
 
 	biblioteca bb1;
 	bb1.id=1; strcpy(bb1.nombre,"biblio1");strcpy(bb1.ubicacion,"Bilbao");
+	biblioteca bb2;
+	bb2.id=2; strcpy(bb2.nombre,"biblio2");strcpy(bb2.ubicacion,"Donosti");
+	cout<<"imprimir biblio"<<endl;
 	imprimirbiblioteca(bb1);
 
 	grupoBiblioteca gb1;
-	gb1.numBibliotecas=1;
+	gb1.numBibliotecas=2;
 	gb1.bibliotecas=&bb1;
+	gb1.bibliotecas=&bb2;
+	cout<<"imprimir biblios"<<endl;
 	imprimirbibliotecas1(gb1);
 
 
