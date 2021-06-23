@@ -17,7 +17,8 @@
 #include "LibroDigital.h"
 #include "SedeBiblioteca.h"
 #include "Revista.h"
-
+#include "SedeBiblioteca.c"
+#include "Revista.c"
 
 
 int main(void) {
@@ -45,16 +46,16 @@ int main(void) {
 
 	revista r1;
 	r1.idrevista=1;  strcpy(r1.titulo,"Hola"); strcpy(r1.autor,"Agustin"); r1.precio=14;
-	//imprimirRevista(r1);
+	imprimirRevista(r1);
 
 	biblioteca bb1;
 	bb1.id=1; strcpy(bb1.nombre,"biblio1");strcpy(bb1.ubicacion,"Bilbao");
-	//imprimirbiblioteca(bb1);
+	imprimirbiblioteca(bb1);
 
 	grupoBiblioteca gb1;
 	gb1.numBibliotecas=1;
 	gb1.bibliotecas=&bb1;
-	//imprimirbibliotecas(gb1);
+	imprimirbibliotecas1(gb1);
 
 
 	setbuf(stdout, NULL);
