@@ -58,6 +58,16 @@ int main(void) {
 	cout<<"imprimir revistas"<<endl;
 	imprimirRevistas1(rr1);
 
+	cout<<"numero de revistas con precio menor que 15="<<endl;
+	revista revistas[5];
+	revistas[0].idrevista=1;strcpy(revistas[0].titulo,"Hola");strcpy(revistas[0].autor,"Hodei");revistas[0].precio=14;
+	revistas[1].idrevista=2;strcpy(revistas[1].titulo,"Lecturas");strcpy(revistas[1].autor,"Carmen"); revistas[1].precio=14;
+	revistas[2].idrevista=3;strcpy(revistas[2].titulo,"Corazon");strcpy(revistas[2].autor,"Carmina"); revistas[2].precio=20;
+	revistas[3].idrevista=4;strcpy(revistas[3].titulo,"Una");strcpy(revistas[3].autor,"Juan"); revistas[3].precio=20;
+	revistas[4].idrevista=5;strcpy(revistas[0].titulo,"Otra");strcpy(revistas[4].autor,"Pablo"); revistas[4].precio=20;
+
+	printf("%i \n",cuantasRevistas(revistas, 5, 15));
+
 	biblioteca bb1;
 	bb1.id=1; strcpy(bb1.nombre,"biblio1");strcpy(bb1.ubicacion,"Bilbao");
 	biblioteca bb2;

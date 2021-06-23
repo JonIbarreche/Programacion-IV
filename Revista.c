@@ -18,3 +18,15 @@ void imprimirRevistas1(Revistas rs){
 		imprimirRevista(rs.revistas[i]);
 		}
 }
+
+int cuantasRevistas(revista * r, int tamanyo, int precio){
+	int i;
+		int cont = 0;
+		for (i = 0; i < tamanyo; i++) {
+			if (r[i].precio < precio) {
+				cont++;
+			}
+		}
+
+		return cont;
+}
