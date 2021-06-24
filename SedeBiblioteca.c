@@ -59,3 +59,14 @@ char** listadoNombres(biblioteca * b, int tamanyo, char letra) {
 
 	return lista;
 }
+biblioteca * crearBiblioteca(int id,char * nombre) {
+	biblioteca * b = (biblioteca *)malloc(sizeof(biblioteca));
+
+	b->id = id;
+	strcpy(b->nombre, nombre);
+	strcpy(b->ubicacion, NULL);
+
+
+
+	return b;
+}

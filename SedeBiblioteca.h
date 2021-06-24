@@ -25,5 +25,6 @@ void imprimirbiblioteca(biblioteca b);
 void imprimirbibliotecas1(grupoBiblioteca b);
 int cuantosNombres(biblioteca * b, int tamanyo, char letra);
 char** listadoNombres(biblioteca * b, int tamanyo, char letra);
+biblioteca * crearBiblioteca(int id,char * nombre);
 
 #endif /* SEDEBIBLIOTECA_H_ */

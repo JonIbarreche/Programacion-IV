@@ -71,3 +71,8 @@ revista * crearRevista(char * titulo) {
 	return a;
 }
 
+void liberarRevista(revista * revista) {
+
+	free(revista);
+	revista = NULL;
+}
