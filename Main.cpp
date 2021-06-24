@@ -15,10 +15,10 @@
 #include "Base1.h"
 #include "LibroPapel.h"
 #include "LibroDigital.h"
+extern "C" {
 #include "SedeBiblioteca.h"
 #include "Revista.h"
-#include "SedeBiblioteca.c"
-#include "Revista.c"
+}
 
 
 int main(void) {
