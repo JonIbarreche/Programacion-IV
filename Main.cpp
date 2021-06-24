@@ -91,7 +91,7 @@ int main(void) {
 	biblioteca bb1;
 	bb1.id=1; strcpy(bb1.nombre,"biblio1");strcpy(bb1.ubicacion,"Bilbao");
 	biblioteca bb2;
-	bb2.id=2; strcpy(bb2.nombre,"biblio2");strcpy(bb2.ubicacion,"Donosti");
+	bb2.id=2; strcpy(bb2.nombre,"arriba");strcpy(bb2.ubicacion,"Bilbao");
 	biblioteca bb3;
 	bb3.id=3; strcpy(bb3.nombre,"ave maria");strcpy(bb3.ubicacion,"Donosti");
 	cout<<"imprimir biblio"<<endl;
@@ -111,7 +111,14 @@ int main(void) {
 	biblios[1] = bb2;
 	biblios[2] = bb3;
 	printf("%i \n",cuantosNombres(biblios, 3, 'a') );
-	//menu principal
+	int dim= cuantosNombres(biblios, 3, 'a') ;
+	char **list = listadoNombres(biblios, 5, 'a') ;
+		printf("Nombres con la inicial 'a':\n");
+		for (i = 0; i < dim;i++) {
+			printf("%s\n", list[i]);
+		}
+
+	//menu principal esto es con la BD
 
 	setbuf(stdout, NULL);
 	int opcion;

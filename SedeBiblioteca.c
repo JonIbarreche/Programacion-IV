@@ -35,4 +35,25 @@ int cuantosNombres(biblioteca * b, int tamanyo, char letra) {
 
 	return cont;
 }
+char** listadoNombres(biblioteca * b, int tamanyo, char letra) {
+	int i;
+	int dim = cuantosNombres(b, tamanyo, letra);
 
+
+	char **lista;
+	typedef char nombre [30];
+	lista = (char **) malloc(dim * sizeof(char *));
+	for(i = 0 ; i < dim ; i++){
+		lista[i] = (char *) malloc(sizeof(nombre));
+	}
+
+	int cont = 0;
+	for (i = 0; i < tamanyo; i++) {
+		if (b[i].nombre[0] == letra) {
+			strcpy(lista[cont], b[i].nombre);
+			cont++;
+		}
+	}
+
+	return lista;
+}
