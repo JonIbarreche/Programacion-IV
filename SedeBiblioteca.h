@@ -23,5 +23,6 @@ typedef struct {
 } grupoBiblioteca;
 void imprimirbiblioteca(biblioteca b);
 void imprimirbibliotecas1(grupoBiblioteca b);
+int cuantosNombres(biblioteca * b, int tamanyo, char letra);
 
 #endif /* SEDEBIBLIOTECA_H_ */

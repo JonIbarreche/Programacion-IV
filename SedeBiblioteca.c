@@ -24,4 +24,15 @@ void imprimirbibliotecas1(grupoBiblioteca b){
 
 }
 
+int cuantosNombres(biblioteca * b, int tamanyo, char letra) {
+	int i;
+	int cont = 0;
+	for (i = 0; i < tamanyo; i++) {
+		if (b[i].nombre[0] == letra) {
+			cont++;
+		}
+	}
+
+	return cont;
+}
 

@@ -80,7 +80,7 @@ int main(void) {
 	revistass[2] = r3;
 
 	 	char **lista = listadoPrecioBarato(revistass, 5, &baratas);
-		printf("\ revistas baratas:\n");
+		printf(" revistas baratas:\n");
 		int i;
 		for (i = 0; i < baratas;i++) {
 			printf("%s\n", lista[i]);
@@ -92,6 +92,8 @@ int main(void) {
 	bb1.id=1; strcpy(bb1.nombre,"biblio1");strcpy(bb1.ubicacion,"Bilbao");
 	biblioteca bb2;
 	bb2.id=2; strcpy(bb2.nombre,"biblio2");strcpy(bb2.ubicacion,"Donosti");
+	biblioteca bb3;
+	bb3.id=3; strcpy(bb3.nombre,"ave maria");strcpy(bb3.ubicacion,"Donosti");
 	cout<<"imprimir biblio"<<endl;
 	imprimirbiblioteca(bb1);
 
@@ -102,6 +104,14 @@ int main(void) {
 	cout<<"imprimir biblios"<<endl;
 	imprimirbibliotecas1(gb1);
 
+	cout<<"numero de biblios con la letra a="<<endl;
+	biblioteca * biblios;
+	biblios = (biblioteca *)malloc(sizeof(biblioteca) * 3);
+	biblios[0] = bb1;
+	biblios[1] = bb2;
+	biblios[2] = bb3;
+	printf("%i \n",cuantosNombres(biblios, 3, 'a') );
+	//menu principal
 
 	setbuf(stdout, NULL);
 	int opcion;
