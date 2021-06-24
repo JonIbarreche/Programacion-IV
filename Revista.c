@@ -7,6 +7,9 @@
 
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 #include "revista.h"
 
 
@@ -57,3 +60,14 @@ char** listadoPrecioBarato(revista * r, int tamanyo, int * baratos) {
 
 	return lista;
 }
+
+revista * crearRevista(char * titulo) {
+	revista * a = (revista *)malloc(sizeof(revista));
+	strcpy(a->titulo, titulo);
+	strcpy(a->autor, NULL);
+	a->precio = 0;
+
+
+	return a;
+}
+

@@ -25,4 +25,5 @@ void imprimirRevista(revista r);
 void imprimirRevistas1(Revistas rs);
 int cuantasRevistas(revista * r, int tamanyo, int precio);
 char** listadoPrecioBarato(revista * r, int tamanyo, int * baratos);
+revista * crearRevista(char * titulo) ;
 #endif /* REVISTA_H_ */
